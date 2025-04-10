@@ -26,18 +26,137 @@
 
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
+  
+  <!-- Additional Google Fonts for better typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
+  <style>
+    /* Global styles */
+    html, body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', 'Roboto', Arial, sans-serif;
+      overflow-x: hidden;
+    }
+    
+    /* Header styling */
+    .header_section {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    
+    .navbar-brand span {
+      color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.5px;
+    }
+    
+    .navbar-nav {
+      margin-left: auto;
+    }
+    
+    .nav-item {
+      margin: 0 10px;
+    }
+    
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.2px;
+    }
+    
+    .nav-link:hover, .nav-item.active .nav-link {
+      color: #007BFF !important;
+    }
+    
+    /* Carousel styling */
+    .slider_section {
+      padding: 50px 0;
+    }
+    
+    .detail-box {
+      padding: 20px;
+    }
+    
+    .detail-box h1 {
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .detail-box h1:first-child {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .detail-box h1:first-child::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: #007BFF;
+    }
+    
+    .detail-box h1:nth-child(2) {
+      font-size: 2rem;
+    }
+    
+    .detail-box p {
+      color: #555;
+      line-height: 1.7;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .img-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Carousel indicators */
+    .carousel-indicators {
+      bottom: -40px;
+    }
+    
+    .carousel-indicators li {
+      background-color: #ccc;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin: 0 5px;
+    }
+    
+    .carousel-indicators li.active {
+      background-color: #007BFF;
+    }
+  </style>
 </head>
 
 <body>
 
   <div class="hero_area">
-
     <div class="hero_bg_box">
       <div class="bg_img_box">
         <img src="images/hero-bg.png" alt="">
@@ -49,23 +168,20 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
-            <span>
-              HearMeOut
-            </span>
+            <span>HearMeOut</span>
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> </span>
+            <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  ">
-              
+            <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="about.html"> Home</a>
+                <a class="nav-link" href="about.html">Home<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Types<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.html">Types</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="why.html">Hearing Health</a>
@@ -73,33 +189,24 @@
               <li class="nav-item">
                 <a class="nav-link" href="team.html">Testing</a>
               </li>
-              <li class="nav-item">
-              <form class="form-inline">
-                </button>
-              </form>
             </ul>
           </div>
         </nav>
       </div>
     </header>
     <!-- end header section -->
+    
     <!-- slider section -->
-    <section class="slider_section ">
+    <section class="slider_section">
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="container ">
+            <div class="container">
               <div class="row">
-                <div class="col-md-6 ">
+                <div class="col-md-6">
                   <div class="detail-box">
-                  
-                    <h1>
-                      <br><br>
-                  Types of hearing loss
-                    </h1>
-                  <br>
+                    <h1>Types of hearing loss</h1>
                     <h1>Conductive</h1>
-                    <br>
                     <p>
                       Conductive hearing loss happens when something blocks or reduced the flow of sound in the outer or middle ear, leading to make soundwaves to unable to pass efficiently through the outer or middle hear to reach the inner ear. 
                       This can be caused by issused such as earwax buildup, fluid in the ear, or damage to the eardrum.
@@ -109,24 +216,19 @@
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="images/slider-img1.png" alt="">
+                    <img src="images/slider-img1.png" alt="Conductive hearing loss illustration">
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="carousel-item ">
-            <div class="container ">
+          <div class="carousel-item">
+            <div class="container">
               <div class="row">
-                <div class="col-md-6 ">
+                <div class="col-md-6">
                   <div class="detail-box">
-                    <h1>
-                      <br><br>
-                  Types of hearing loss
-                    </h1>
-                  <br>
+                    <h1>Types of hearing loss</h1>
                     <h1>Sensorineural</h1>
-                    <br>
                     <p>
                      Sensorineural hearing loss happens when there is damage to the inner ear or the nerve that sends sound signals to the brain. This type of hearing loss is typically due to aging or prolonged exposure to loud noises. 
                      People with sensorineural hearing loss may find higher-pitched sounds muffled and may experience symtoms such as difficulty hearing, or ringing in the ears.
@@ -135,23 +237,19 @@
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="images/slider-img2.png" alt="">
+                    <img src="images/slider-img2.png" alt="Sensorineural hearing loss illustration">
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="carousel-item">
-            <div class="container ">
+            <div class="container">
               <div class="row">
-                <div class="col-md-6 ">
+                <div class="col-md-6">
                   <div class="detail-box">
-                    <h1>
-                      <br><br>
-                  Types of hearing loss
-                    </h1>
-                  
-                    <br>
+                    <h1>Types of hearing loss</h1>
+                    <h1>Mixed</h1>
                     <p>
                       Mixed hearing loss happens when someone has both Sensorineural and Conductive hearing loss. This means that there is a problem with both the outer or middle ear and the inner ear or hearing nerve.
                       This can be caused by ear infections, trauma, aging, or exposure to loud noises. Mixed hearing loss can be partially treated or improved by it is generally not reversible.
@@ -160,239 +258,33 @@
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="images/slider-img3.png" alt="">
+                    <img src="images/slider-img3.png" alt="Mixed hearing loss illustration">
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="carousel-item">
-          <div class="container ">
-            <div class="row">
-              <div class="col-md-6 ">
-                <div class="detail-box">
-                  <h1>
-                    Crypto <br>
-                    Currency
-                  </h1>
-                  <p>
-                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
-                  </p>
-                  <div class="btn-box">
-                    <a href="" class="btn1">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="img-box">
-                  <img src="images/slider-img.png" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="container ">
-            <div class="row">
-              <div class="col-md-6 ">
-                <div class="detail-box">
-                  <h1>
-                    Crypto <br>
-                    Currency
-                  </h1>
-                  <p>
-                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
-                  </p>
-                  <div class="btn-box">
-                    <a href="" class="btn1">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="img-box">
-                  <img src="images/slider-img.png" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        
+        <!-- Carousel controls -->
         <ol class="carousel-indicators">
           <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-item" data-slide-to="1"></li>
+          <li data-target="#customCarousel1" data-slide-to="1"></li>
           <li data-target="#customCarousel1" data-slide-to="2"></li>
         </ol>
+        
+        <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-
     </section>
     <!-- end slider section -->
-  
-
-
-
-
-
-
-  <!-- about section -->
-
-
-
-  <!-- end about section -->
-
-  <!-- why section -->
-
-
-
-  <!-- end why section -->
-
-  <!-- team section -->
-
-
-<head>
-
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      padding: 0;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    .test-container {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-
-    th, td {
-      padding: 10px;
-      text-align: center;
-      border: 1px solid #ddd;
-    }
-
-    canvas {
-      margin: 0px auto;
-      display: block;
-      max-width: 0%;
-    }
-    
-
-    button {
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      border-radius: 5px;
-      margin: 5px;
-    }
-
-   
-  /* Remove margins and padding from the entire page */
-  html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Ensure consistent box sizing */
-  }
-</style>
-
-
-
-  <script>
-    // Function to play a tone at a specific frequency
-    function playTone(frequency) {
-      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      const oscillator = audioCtx.createOscillator();
-      const gainNode = audioCtx.createGain();
-
-      // Set the frequency of the tone
-      oscillator.frequency.setValueAtTime(frequency, audioCtx.currentTime);
-      oscillator.type = 'sine'; // Use a sine wave for the tone
-
-      // Set volume (gain) to a reasonable level
-      gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime); // Adjust this for louder or quieter tones
-
-      // Connect the nodes
-      oscillator.connect(gainNode);
-      gainNode.connect(audioCtx.destination);
-
-      
-
-      // Start and stop the oscillator
-      oscillator.start();
-      setTimeout(() => oscillator.stop(), 1000); // Play for 1 second
-    }
-
-    // Function to generate the audiogram
-    function generateAudiogram() {
-      const frequencies = [250, 500, 1000, 2000, 4000, 8000];
-      const levels = [
-        document.getElementById('freq250').value,
-        document.getElementById('freq500').value,
-        document.getElementById('freq1000').value,
-        document.getElementById('freq2000').value,
-        document.getElementById('freq4000').value,
-        document.getElementById('freq8000').value
-      ];
-
-      const ctx = document.getElementById('audiogramChart').getContext('2d');
-      new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: frequencies,
-          datasets: [{
-            label: 'Hearing Levels (dB)',
-            data: levels,
-            borderColor: '#007BFF',
-            fill: false,
-            tension: 0.1
-          }]
-        },
-        options: {
-          responsive: true,
-          scales: {
-            x: {
-              title: {
-                display: true,
-                text: 'Frequency (Hz)'
-              }
-            },
-            y: {
-              title: {
-                display: true,
-                text: 'Hearing Level (dB)'
-              },
-              reverse: true, // Flip the y-axis for audiogram standards
-              ticks: {
-                stepSize: 10
-              }
-            }
-          }
-        }
-      });
-    }
-  </script>
-
-
-
-  <!-- end team section -->
-
-  <!-- footer section -->
+  </div>
 
   <!-- jQery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -406,11 +298,6 @@
   </script>
   <!-- custom js -->
   <script type="text/javascript" src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
-  <!-- End Google Map -->
 
 </body>
-
 </html>
