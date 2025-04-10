@@ -26,12 +26,131 @@
 
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
+  
+  <!-- Additional Google Fonts for better typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'Poppins', 'Roboto', Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 45px;
+      height: 45px;
+      background-color: rgba(0, 123, 255, 0.8);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 9999;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background-color: rgba(0, 123, 255, 1);
+      transform: translateY(-3px);
+    }
+    
+    .back-to-top i {
+      font-size: 20px;
+    }
+    
+    /* Header styling */
+    .header_section {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    
+    .navbar-brand span {
+      color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.5px;
+    }
+    
+    .navbar-nav {
+      margin-left: auto;
+    }
+    
+    .nav-item {
+      margin: 0 10px;
+    }
+    
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.2px;
+    }
+    
+    .nav-link:hover, .nav-item.active .nav-link {
+      color: #007BFF !important;
+    }
+    
+    /* Heading styles */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    .heading_container h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    
+    .heading_container h2 span {
+      color: #007BFF;
+    }
+    
+    /* Box styles */
+    .why_container .box .detail-box h5 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .why_container .box .detail-box p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    
+    /* Back to top link */
+    .btn-box h1 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .btn-box h1 span {
+      color: #007BFF;
+    }
+  </style>
 </head>
 
 <body class="sub_page">
@@ -241,6 +360,7 @@
 
   <!-- end why section -->
 
+  <!-- Remove this section as it's replaced by the floating button
   <section class="service_section layout_padding">
     <div class="service_container">
       <div class="container ">
@@ -260,6 +380,7 @@
       </div>
     </div>
   </section>
+  -->
 
 </div>
 </section>
@@ -283,7 +404,33 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
   <!-- End Google Map -->
-
+  
+  <!-- Add back to top button -->
+  <a href="#" class="back-to-top" id="backToTop">
+    <i class="fa fa-arrow-up"></i>
+  </a>
+  
+  <!-- Back to top button script -->
+  <script>
+    // Show/hide back to top button based on scroll position
+    window.addEventListener('scroll', function() {
+      const backToTop = document.getElementById('backToTop');
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    
+    // Smooth scroll to top when button is clicked
+    document.getElementById('backToTop').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </body>
 
 </html>
